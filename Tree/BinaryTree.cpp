@@ -43,147 +43,147 @@ int findHeight(Node*node){
     return height-1;
 }
 
-void Intrav(Node* node){
-    if(!node)return;
-    Intrav(node->left);
-    cout<<node->data<<" ";
-    Intrav(node->right);
+// void Intrav(Node* node){
+//     if(!node)return;
+//     Intrav(node->left);
+//     cout<<node->data<<" ";
+//     Intrav(node->right);
 
-}
+// }
 
-void Pretrav(Node*node){
-    if(!node)return;
-    cout<<node->data<<" ";
-    Pretrav(node->left);
-    Pretrav(node->right);
-}
+// void Pretrav(Node*node){
+//     if(!node)return;
+//     cout<<node->data<<" ";
+//     Pretrav(node->left);
+//     Pretrav(node->right);
+// }
 
-void Postrav(Node*node){
-    if(!node)return;
-    Postrav(node->left);
-    Postrav(node->right);
-    cout<<node->data<<" ";
-}
+// void Postrav(Node*node){
+//     if(!node)return;
+//     Postrav(node->left);
+//     Postrav(node->right);
+//     cout<<node->data<<" ";
+// }
 
-void Levtrav(Node*node){
-    if(!node)return;
-    queue<Node*>qw;
-    qw.push(node);
-    while(!qw.empty()){
-        Node* x=qw.front();
-        qw.pop();
-        cout<<x->data<<" ";
-        if(x->left)qw.push(x->left);
-        if(x->right)qw.push(x->right);
-    }
-}
+// void Levtrav(Node*node){
+//     if(!node)return;
+//     queue<Node*>qw;
+//     qw.push(node);
+//     while(!qw.empty()){
+//         Node* x=qw.front();
+//         qw.pop();
+//         cout<<x->data<<" ";
+//         if(x->left)qw.push(x->left);
+//         if(x->right)qw.push(x->right);
+//     }
+// }
 
 
 
-void insert(Node* &parents,int val){
-    if(!parents){
-        parents=new Node(val);
-        return ;
-    }else if(val<parents->data){
-        insert(parents->left,val);
-    }else{
-        insert(parents->right,val);
-    }
-}
+// void insert(Node* &parents,int val){
+//     if(!parents){
+//         parents=new Node(val);
+//         return ;
+//     }else if(val<parents->data){
+//         insert(parents->left,val);
+//     }else{
+//         insert(parents->right,val);
+//     }
+// }
 
-Node* a_insert(Node* root,int val){
-    if(!root){
-        root=new Node(val);
-        return root;
-    }
+// Node* a_insert(Node* root,int val){
+//     if(!root){
+//         root=new Node(val);
+//         return root;
+//     }
 
-    queue<Node*>q;
-    q.push(root);
+//     queue<Node*>q;
+//     q.push(root);
 
-    while(!q.empty()){
-        Node* x=q.front();
-        q.pop();
+//     while(!q.empty()){
+//         Node* x=q.front();
+//         q.pop();
 
-        if(!x->left){
-            x->left=new Node(val);
-            return root;
-        }else{
-            q.push(x->left);
-        }
+//         if(!x->left){
+//             x->left=new Node(val);
+//             return root;
+//         }else{
+//             q.push(x->left);
+//         }
 
-        if(!x->right){
-            x->right=new Node(val);
-            return root;
-        }else{
-            q.push(x->right);
-        }
-    }
-}
+//         if(!x->right){
+//             x->right=new Node(val);
+//             return root;
+//         }else{
+//             q.push(x->right);
+//         }
+//     }
+// }
 
-void del_Deepest(Node*root,Node*delNode){
-    queue<Node*>q;
-    q.push(root);
-    Node* x;
+// void del_Deepest(Node*root,Node*delNode){
+//     queue<Node*>q;
+//     q.push(root);
+//     Node* x;
 
-    while(!q.empty()){
-       x=q.front();
-       q.pop();
+//     while(!q.empty()){
+//        x=q.front();
+//        q.pop();
        
-       if(x==delNode){
-        x=nullptr;
-        delete(delNode);
-        return;
-       }
+//        if(x==delNode){
+//         x=nullptr;
+//         delete(delNode);
+//         return;
+//        }
 
-       if(x->right){
-        if(x->right==delNode){
-            x->right=nullptr;
-            delete(delNode);
-            return;
-        }
-        q.push(x->right);
-       }
+//        if(x->right){
+//         if(x->right==delNode){
+//             x->right=nullptr;
+//             delete(delNode);
+//             return;
+//         }
+//         q.push(x->right);
+//        }
 
-       if(x->left){
-        if(x->left==delNode){
-            x->left=nullptr;
-            delete(delNode);
-            return;
-        }
-        q.push(x->left);
-       }
-    }
-}
+//        if(x->left){
+//         if(x->left==delNode){
+//             x->left=nullptr;
+//             delete(delNode);
+//             return;
+//         }
+//         q.push(x->left);
+//        }
+//     }
+// }
 
-Node *a_delete(Node*root,int val){
-    if(!root){
-        return nullptr;
-    }
-    if((!root->left)&&(!root->right)){
-        if(root->data==val)return nullptr;
-        else return root;
-    }
-    queue<Node*>q;
-    q.push(root);
-    Node* keyNode=nullptr;
-    Node*x;
-    while(!q.empty()){
-        x=q.front();
-        q.pop();
+// Node *a_delete(Node*root,int val){
+//     if(!root){
+//         return nullptr;
+//     }
+//     if((!root->left)&&(!root->right)){
+//         if(root->data==val)return nullptr;
+//         else return root;
+//     }
+//     queue<Node*>q;
+//     q.push(root);
+//     Node* keyNode=nullptr;
+//     Node*x;
+//     while(!q.empty()){
+//         x=q.front();
+//         q.pop();
 
-        if(x->data==val)keyNode=x;
-        if(x->left)q.push(x->left);
-        if(x->right)q.push(x->right);
-    }
+//         if(x->data==val)keyNode=x;
+//         if(x->left)q.push(x->left);
+//         if(x->right)q.push(x->right);
+//     }
 
-    if(keyNode!=nullptr){
-        int tmp=x->data;
-        keyNode->data=tmp;
-        del_Deepest(root,x);
-    }
-    return root;
+//     if(keyNode!=nullptr){
+//         int tmp=x->data;
+//         keyNode->data=tmp;
+//         del_Deepest(root,x);
+//     }
+//     return root;
 
-}
+// }
 
 int main(){
     
