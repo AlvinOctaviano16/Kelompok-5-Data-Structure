@@ -8,7 +8,7 @@ Difficulty : Easy
 Diberikan sebuah Binary Tree , Kemudian carilah tinggi dari Tree tersebut.
 Menggunakan pendekatan LevelOrderTraversal dan struktur data Queue agar dapat merepresentasikan algoritma dari LevelOrderTraversal, yaitu dengan mengunjungi node-node pohon secara berurutan berdasarkan levelnya mulai dari root. Pada setiap iterasi, semua node pada level saat ini diproses terlebih dahulu dengan mengeluarkannya dari queue dan menambahkan anak-anaknya ke queue untuk level berikutnya. Setelah semua node pada satu level selesai diproses, penghitung tinggi pohon dinaikkan satu, sehingga secara bertahap dihitung berapa banyak level yang ada pada pohon tersebut. Proses ini berlanjut hingga semua node telah dikunjungi dan queue kosong, sehingga nilai penghitung tersebut merepresentasikan tinggi pohon berdasarkan jumlah level yang dilewati.
 
-#Langkah Penyelesaian
+# Langkah Penyelesaian
 1. Dengan melakukan push pada root Tree ke queue.
 2. Jika queue tidak kosong lakukan perulangan while
 3. Lalu Melakukan loop for berdasarkan banyaknya node yang ada pada level tersebut
