@@ -1,8 +1,8 @@
 # BinaryTree
-Nama : Alvin Octaviano A
-NIM  : D121231091
-Link Soal : https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem?isFullScreen=true 
-Difficulty : Easy 
+- Nama : Alvin Octaviano A
+- NIM  : D121231091
+- Link Soal : https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem?isFullScreen=true 
+- Difficulty : Easy 
 
 # Short Approach Summary
 Diberikan sebuah Binary Tree , Kemudian carilah tinggi dari Tree tersebut.
